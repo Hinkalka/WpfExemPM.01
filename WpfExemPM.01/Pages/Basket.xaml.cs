@@ -13,25 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace WpfExemPM._01.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для Basket.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class Basket : Page
     {
-        
-        public MainPage()
+        public Basket()
         {
             InitializeComponent();
-            List<BookMarket> s = FolderClasses.BaseConnect.Data.BookMarket.ToList();
-            LVmarket.ItemsSource = s;
         }
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            FolderClasses.Pages.frame.Navigate(new Basket());
+            FolderClasses.Pages.frame.Navigate(new MainPage());
         }
-    }   
+    }
 }
