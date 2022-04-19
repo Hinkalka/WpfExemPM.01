@@ -8,6 +8,6 @@ namespace WpfExemPM._01.FolderClasses
 {
     class BaseConnect
     {
-        public static Entities1 Data;
+        public static Entities2 Data;
     }
 }

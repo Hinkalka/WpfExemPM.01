@@ -13,19 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfExemPM._01
+
+namespace WpfExemPM._01.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        
+        public MainPage()
         {
             InitializeComponent();
-            FolderClasses.Pages.frame = Fmain;
-            FolderClasses.BaseConnect.Data = new Entities2();
-            Fmain.Navigate(new Pages.MainPage());
+            List<BookMarket> s = FolderClasses.BaseConnect.Data.BookMarket.ToList();
+            LVmarket.ItemsSource = s;
         }
-    }
+       
+}
+
 }
