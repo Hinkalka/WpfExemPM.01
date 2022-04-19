@@ -7,8 +7,28 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Basket">
-
+    
     <Grid>
-        <Button Click="Button_Click" Height="50" Width="150" Margin="10,10,640,390">На главную страницу</Button>
+        <Button Background="#03fcd3" Click="Button_Click" Margin="0,0,324,385" >На главную страницу</Button>
+        <ListView  x:Name="LVmarket" Height="320" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="100" Width="100"  Source="{Binding Image}"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock FontSize="14" Text="{Binding Title}"></TextBlock>
+                           
+                            <TextBlock Text="{Binding Author, StringFormat={}Автор: {0}}"></TextBlock>
+                            <TextBlock Text="{Binding Cost, StringFormat={}Цена: {0} руб.}"></TextBlock>
+                            <ListView  ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                <TextBlock Width="500" TextWrapping="Wrap" Text="{Binding Discription, StringFormat={}Описание: {0}}"></TextBlock>
+                            </ListView>
+                            
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

@@ -28,7 +28,6 @@ namespace WpfExemPM._01
         }
     
         public virtual DbSet<BookMarket> BookMarket { get; set; }
-        public virtual DbSet<OrderTable> OrderTable { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -9,21 +9,22 @@
       Title="MainPage">
 
     <Grid ScrollViewer.VerticalScrollBarVisibility="Visible">
-        
+
         <StackPanel Orientation="Vertical">
-            <Button Click="Button_Click" Width="100" Margin="-670 0 0 0">В корзину</Button>
+            <Button BorderBrush="#03fcd3" Background="#03fcd3" Click="Button_Click"  Width="100" Margin="-670 0 0 0">В корзину</Button>
+
             <StackPanel Width="250" HorizontalAlignment="Right" Orientation="Vertical">
                 <Border BorderBrush="Green" BorderThickness="2">
                     <StackPanel>
-                        <TextBox x:Name="TBOXCountBook" >Колличество выбранных книг: 0</TextBox>
+                        <TextBox x:Name="TBOXCountBook" Background="#03f8fc" >Колличество выбранных книг: 0</TextBox>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox>Стоимость покупки:</TextBox>
-                            <TextBox x:Name="TBOXCostWithoutSale" TextDecorations="Strikethrough"></TextBox>
-                            <TextBox x:Name="TBOXCost" >0</TextBox>
+                            <TextBox Background="#03f8fc">Стоимость покупки:</TextBox>
+                            <TextBox Background="#03f8fc" x:Name="TBOXCostWithoutSale" TextDecorations="Strikethrough"></TextBox>
+                            <TextBox Background="#89f8fa" x:Name="TBOXCost" >0</TextBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox>Размер скидки:</TextBox>
-                            <TextBox x:Name="TBOXSale" >0 %</TextBox>
+                            <TextBox Background="#03f8fc">Размер скидки:</TextBox>
+                            <TextBox Background="#89f8fa" x:Name="TBOXSale" >0 %</TextBox>
                         </StackPanel>
                     </StackPanel>
                 </Border>    
@@ -34,6 +35,7 @@
                         <StackPanel Orientation="Horizontal">
                             <Image Height="100" Width="100"  Source="{Binding Image}"/>
                             <StackPanel Orientation="Vertical">
+                                <TextBlock FontSize="14" Background="#89fad1" Text="{Binding Title}"></TextBlock>
                                 <TextBlock FontSize="14" Text="{Binding Genre}"></TextBlock>
                                 <TextBlock Text="{Binding Author, StringFormat={}Автор: {0}}"></TextBlock>
                                 <TextBlock Text="{Binding Cost, StringFormat={}Цена: {0} руб.}"></TextBlock>
@@ -41,7 +43,7 @@
                                 <TextBlock Text="{Binding CountInStock, StringFormat={}Количество на складе: {0}}"></TextBlock>
                                 <TextBlock Width="500" TextWrapping="Wrap" Text="{Binding SubDiscription, StringFormat={}Описание: {0}}"></TextBlock>
                             </StackPanel>
-                            <Button Height="50" Uid="{Binding id}">Добавить в корзину</Button>
+                            <Button Height="50" Background="#89fad1" Uid="{Binding id}" >Добавить в корзину</Button>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
